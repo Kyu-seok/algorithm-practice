@@ -7,8 +7,18 @@
         {
             "type": "lldb",
             "request": "launch",
+<<<<<<< HEAD
             "name": "Debug",
             "program": "${workspaceFolder}/<your program>",
+=======
+            "program": "enter program name, for example ${workspaceFolder}/a.out",
+=======
+            "name": "gcc - Build and debug active file",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/${fileBasenameNoExtension}",
+>>>>>>> 50cde858f5cb1cecf72f304322ee6fa5eacdcd36
+>>>>>>> b98027e8fdf939c9f0748912da805e414ce3114b
             "args": [],
             "cwd": "${workspaceFolder}"
         }
