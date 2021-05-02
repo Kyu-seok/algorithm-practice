@@ -11,7 +11,11 @@
                 "-g",
                 "${file}",
                 "-o",
+<<<<<<< HEAD
                 "${fileDirname}/${fileBasenameNoExtension}.out"
+=======
+                "${fileDirname}/${fileBasenameNoExtension}"
+>>>>>>> b98027e8fdf939c9f0748912da805e414ce3114b
             ],
             "options": {
                 "cwd": "/usr/bin"

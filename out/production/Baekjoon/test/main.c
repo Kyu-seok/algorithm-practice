@@ -1,8 +1,6 @@
 #include <stdio.h>
 
-int main(void) 
-{
-    printf("Hello World!\n");
-
-    return 1;
+int main(int argc, char* argv[]) {
+    printf("Hello world!\n");
+    return 0;
 }
