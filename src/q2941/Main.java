@@ -1,61 +1,82 @@
-package q2941;
-
 import java.util.Scanner;
 
 public class Main {
+    public static void main(String[] args) {
 
+        Scanner in = new Scanner(System.in);
 
-    public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        String word = sc.next();
+        String str = in.nextLine();
 
-        int number = findNumber(word, 0);
+        int count = 0;
 
-        System.out.println(number);
-    }
+        for (int i = 0; i < str.length(); i++) {
 
-    private static int findNumber(String word, int i) {
-        int n = i;
+            char ch = str.charAt(i);
 
-        while(!word.isEmpty()) {
-            if((word.charAt(0)=='c') && (word.charAt(1) =='=')) {
-                word = word.substring(2);
-                findNumber(word, ++n);
+            if(ch == 'c') {			// 만약 ch 가 c 라면?
+                if(i < str.length() - 1) {
+                    if(str.charAt(i + 1) == '=') {		//만약 ch 다음 문자가 '=' 이라면?
+                        // i+1 까지가 하나의 문자이므로 다음 문자를 건너 뛰기 위해 1 증가
+                        i++;
+                    }
+                    else if(str.charAt(i + 1) == '-') {
+                        i++;
+                    }
+                }
             }
-            else if((word.charAt(0)=='c') && (word.charAt(1) =='-')) {
-                word = word.substring(2);
-                findNumber(word, ++n);
+
+            else if(ch == 'd') {
+                if(i < str.length() - 1) {
+                    if(str.charAt(i + 1) == 'z') {
+                        if(i < str.length() - 2) {
+                            if(str.charAt(i + 2) == '=') {	// dz= 일 경우
+                                i += 2;
+                            }
+                        }
+                    }
+
+                    else if(str.charAt(i + 1) == '-') {	// d- 일 경우
+                        i++;
+                    }
+                }
             }
-            else if((word.charAt(0)=='d') && (word.charAt(1)=='z') && (word.charAt(2)=='=')) {
-               word = word.substring(3);
-               findNumber(word, ++n);
+
+            else if(ch == 'l') {
+                if(i < str.length() - 1) {
+                    if(str.charAt(i + 1) == 'j') {	// lj 일 경우
+                        i++;
+                    }
+                }
             }
-            else if((word.charAt(0)=='d') && (word.charAt(1)=='-')) {
-                word =word.substring(2);
-                findNumber(word, ++n);
+
+            else if(ch == 'n') {
+                if(i < str.length() - 1) {
+                    if(str.charAt(i + 1) == 'j') {	// nj 일 경우
+                        i++;
+                    }
+                }
             }
-            else if((word.charAt(0)=='l') && (word.charAt(1)=='j')) {
-                word = word.substring(2);
-                findNumber(word, ++n);
+
+            else if(ch == 's') {
+                if(i < str.length() - 1) {
+                    if(str.charAt(i + 1) == '=') {	// s= 일 경우
+                        i++;
+                    }
+                }
             }
-            else if((word.charAt(0)=='n') && (word.charAt(1)=='j')) {
-                word = word.substring(2);
-                findNumber(word, ++n);
+
+            else if(ch == 'z') {
+                if(i < str.length() - 1) {
+                    if(str.charAt(i + 1) == '=') {	// z= 일 경우
+                        i++;
+                    }
+                }
             }
-            else if((word.charAt(0)=='s') && (word.charAt(1)=='=')) {
-                word = word.substring(2);
-                findNumber(word, ++n);
-            }
-            else if((word.charAt(0)=='z') && (word.charAt(1)=='=')) {
-                word = word.substring(2);
-                findNumber(word, ++n);
-            }
-            else{
-                word = word.substring(1);
-                findNumber(word, n++);
-            }
+
+            count++;
+
         }
 
-        return n;
+        System.out.println(count);
     }
 }
