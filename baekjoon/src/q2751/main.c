@@ -3,14 +3,10 @@
 
 int main(void)
 {
-    int arr[1000000];
-    int i, testCase;
+    int i, j, k;
+    i = j = k = 10;
 
-    scanf("%d", &testCase);
-
-    for (i = 0; i < testCase; i++) {
-        scanf("%d", &arr[i]);
-    }
-
-
+  printf("i : %d\n", i); 
+  printf("j : %d\n", j); 
+  printf("k : %d\n", k); 
 }
